@@ -79,6 +79,22 @@ You can generate these from a single high-resolution image using:
 npx tauri icon path/to/your-logo.png
 ```
 
+## Important: Backend Server Required
+
+The Tauri app is a webview wrapper that connects to the backend server. **You must have the backend running** for the app to work:
+
+```bash
+# In one terminal, start the backend
+npm run dev
+
+# In another terminal, launch the Tauri app
+npx tauri dev
+```
+
+For the production build, you'll need to either:
+- Run the backend server separately and configure the app to connect to it
+- Host the backend on a server and update the `devUrl` in `tauri.conf.json`
+
 ## Standalone Mode
 
 For a completely standalone desktop app (no external server), you would need to:
